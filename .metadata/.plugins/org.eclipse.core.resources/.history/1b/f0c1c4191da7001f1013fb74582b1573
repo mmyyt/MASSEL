@@ -1,0 +1,837 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'MinSans-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+li{
+	list-style-type: none;	
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'MinSans-Regular';
+}
+
+input{
+	border: 1px solid #ccc;
+}
+
+select{
+	border: 1px solid #ccc;
+}
+
+input:focus {
+	outline: none;
+
+}
+
+a{
+	color: black;
+	text-decoration: none;
+	
+}
+
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+.topHeaderWrapper {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    background-color: white;
+    z-index: 10;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.topHeader {
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.topHeader-arrow {
+    position: absolute;
+    left: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.topHeader-title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.wrap{
+	width: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: #ebebeb;
+}
+
+
+.saleContent{
+	width: 1000px;
+	padding-top : 80px;
+}
+
+/* 썸네일폼 상단 제목 */
+.saleTitle{
+	height: 100px;
+	background-color: #f9f9f9;
+	font-size: 25px;
+	font-weight: normal;
+	padding-top: 30px;
+	padding-left: 30px;
+	border-radius: 5px;
+}
+
+.title0{
+ 	margin-top: 30px;
+	margin-left: 25px;
+}
+
+/* 썸네일, 기간, 카테고리 div */
+.div1{
+	width: 1007px;
+	height : 1200px;
+	background-color: white;
+	padding-top: 5px;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+	top: -10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.div1Top{
+	display: flex;
+}
+
+.saleInfoTitle{
+	width: 100%;
+	height : 30px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	margin-top: 40px;
+	border-left: 8px solid #555555;
+    border-top-right-radius: 10px; 
+	background-color: #f9f9f9;
+	position: relative;
+	z-index: 2;
+}
+
+.saleInfoTitle>div{
+	margin-left: 30px;
+	margin-top : 3px;
+	font-size: 19px;
+}
+
+
+/*썸네일  */
+.thumbnail{
+
+}
+.thumbnailDiv { 
+  flex: 1; 
+  margin-right: 20px;
+  margin-left: 50px;
+  margin-top : 50px;
+  width: 400px;
+  height: 300px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+   align-items: center;
+	cursor: default;
+}
+
+.thumbnailArea{
+	width : 300px;
+	height: 300px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    font-size: 14px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    
+    cursor: pointer; 
+}
+
+.dsimg{
+	width: 300px;
+	height: 300px;
+	object-fit : cover;
+}
+
+.thumbNailInfo{
+	margin-left: 130px;
+	font-size: 12px;
+	color: #adadad;
+	cursor: default;
+}
+
+/*오른쪽구역  */
+.right-section {
+  margin-top : 30px;
+  margin-left : 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+}
+
+ /* 카테고리 */
+
+.categoryArea{
+	margin-top : 10px;
+	width: 470px;
+	height: 100px;
+	padding-bottom: 5px;
+}
+
+.categoryTitle>p{
+	cursor: default;
+	font-weight: bold;
+	color: #424242;
+	font-size: 16px;
+	
+}
+
+#categorySelect{
+	width: 360px;
+	height: 35px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+/* 기간  */
+.date{
+	margin-top : 10px;
+	width: 450px;
+	height: 210px;
+}
+
+.startDatep, .endDatep{
+	cursor: default;
+	font-weight: bold;
+	color: #424242;
+	font-size: 16px;
+}
+
+.endDate{
+	padding-top: 7px;
+}
+
+#startDay, #endDay{
+	width: 150px;
+	height: 35px;
+	margin-right: 10px;
+	border-radius: 3px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+#startHour, #startMinute, #endHour, #endMinute{
+	width: 60px;
+	height: 35px;
+	border-radius: 3px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#startMinute,#endMinute{
+	margin-left: 10px;
+}
+
+
+.hourtext, .minutetext{
+	font-size: 13px;
+}
+
+/* ============== 기간 설정 달력 ================ */
+
+.ui-datepicker {
+    background-color: green;
+    border: 3px solid #ccc;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/* 헤더 부분 스타일 */
+.ui-datepicker-header {
+    background-color: yellow;
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+/* 월/년도 텍스트 스타일 */
+.ui-datepicker-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 이전/다음 버튼 스타일 */
+.ui-datepicker-prev, .ui-datepicker-next {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 달력 날짜 스타일 */
+.ui-datepicker-calendar td {
+    padding: 5px;
+}
+
+/* 기본 상태의 날짜 스타일 */
+.ui-state-default {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 마우스 오버 시 날짜 스타일 */
+.ui-state-hover {
+    background-color: navy;
+    border-color: #999;
+    color: white;
+}
+
+/* 선택된 날짜 스타일 */
+.ui-state-active {
+    background-color: #333;
+    color: white;
+}
+
+.noEndDate{
+	margin-top: 15px;
+	font-size: 13px;
+	cursor: default;
+}
+/* =================폼 제목 ==================== */
+
+.title{
+	height: 100px;
+	margin-left: 20px;
+	background-color: white;
+}
+
+.titleText{
+	margin-top : 10px;
+	/* margin-bottom : 3px; */
+	margin-left: 70px;
+	font-weight: bold;
+	cursor: default;
+	color: #424242;
+	font-size: 16px;
+}
+
+.titleinput{
+	margin-top: 8px;
+}
+
+.dtitle{
+	margin-top : 10px;
+	margin-left: 70px;
+	height: 35px;
+	width : 765px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 3px;
+}
+
+/* 에디터 */
+
+.editorDiv{
+	height: 600px;
+	margin-left: 20px;
+}
+
+.editorTitle{
+	margin-top: 10px;
+	margin-left: 70px;
+	font-weight: bold;
+	cursor: default;
+	color: #424242;
+	font-size: 16px;
+}
+
+.editorContent{
+	margin-top: 10px;
+	margin-left: 50px;
+}
+
+.note-editor{
+	width: 800px;
+	margin-left : 20px;
+	overflow: hidden;
+	border : 1px solid #ccc;
+	padding: 10px; /*내부여백  */
+}
+
+.note-resizebar {
+    display: none;
+}
+
+/* 상품 추가 */
+
+.productInfo{
+	width: 100%;
+	margin-top: 35px;
+}
+
+.productInfoTitle{
+
+	width: 100%;
+	height : 30px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	margin-top: 40px;
+	border-left: 8px solid #555555;
+    border-top-right-radius: 10px; 
+	background-color: #f9f9f9;
+	position: relative;
+	z-index: 2;
+
+}
+
+.productInfoTitle>div{
+	margin-left: 30px;
+	margin-top : 3px;
+	font-size: 19px;
+}
+
+.saleProductDiv{
+	width: 1007px;
+	background-color: white;
+	padding-top: 5px;
+	margin-bottom: 20px;
+	padding-bottom : 10px;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+	top: -10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.saleProduct{
+	margin-bottom: 30px;
+}
+
+.productInputDiv {
+    gap: 5px;
+    padding: 10px; 
+    margin-left: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.label1{
+	font-weight: bold;
+	cursor: default;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+
+	color: #424242;
+}
+
+.productInputDiv_0{
+	
+	margin-left: 60px;	
+}
+
+.productInput{
+	width: 650px;
+	height: 35px;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 20px;
+}
+
+.productInputDiv_1{
+	display: flex;
+	margin-top: 10px;
+	margin-left: 60px;
+}
+.label2{
+
+	font-weight: bold;
+	cursor: default;
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	color: #424242;
+}
+
+.label4{
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.label4stock{
+	font-weight: bold;
+	cursor: default;
+	font-size: 16px;
+	color: #424242;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.label4maxWrapper{
+	margin-right: 80px;
+}
+.label4max{
+	font-weight: bold;
+	cursor: default;
+	font-size: 16px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;	
+	color: #424242;
+}
+
+.stockInput, .maxInput{
+	width: 100px;
+	height: 35px;
+	border-radius: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 10px;
+}
+
+
+.addList{
+	width: 120px;
+	height: 40px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;	
+}
+
+.addList:hover{
+	background-color: #beaae9;
+	color: white;		
+}
+
+.addListBtn {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 30px; 
+	margin-right: 180px;
+}
+
+
+.productInput2{
+	width: 650px;
+	height: 35px;
+	border-radius: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: 20px;
+}
+
+.s{
+	margin-left: 10px;
+}
+
+.m{
+	margin-left: 10px;
+}
+
+
+/*상품리스트  */
+
+.label3{
+	display: flex;
+    gap: 10px;
+}
+
+.label3Name{
+	background-color: blue;
+	width: 400px;
+	margin-left: 25px;
+	padding-left: 10px;
+}
+
+.label3Price{
+	background-color: lime;
+	width: 400px;
+	margin-left: 25px;
+	padding-left: 10px;
+}
+
+.label3Count{
+	width: 200px;
+	justify-content: flex-end;
+	padding-left: 10px;
+}
+
+.saleListClass{
+	/* height: 150px; */
+}
+
+.spnameClass{
+	/* height : 50px; */
+	background-color: blue;
+	
+}
+
+.sppriceClass{
+	/* height : 50px; */
+	background-color: green;
+}
+
+.dsProductList {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+	margin-bottom: 21px;
+	align-items: center;
+	justify-content: center;
+}
+
+.dsListClass {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 10px;   
+    background-color: #f1f1f1;
+    border-radius : 8px;  
+    width: 650px;
+    padding: 20px;   
+    margin-right: 20px;
+    
+}
+
+.dpnameClass, .dppriceClass{
+    flex: 1;
+    margin-top: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.dpnameClass input{
+	width: 400px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.dppriceClass input{
+	width: 400px;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.submitBtn{
+	margin-top : 30px;
+	margin-bottom : 30px;
+	width: 500px;
+	height: 50px;
+	background-color: white;
+	border-radius: 7px;
+	cursor: pointer;
+	border: none;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	font-size: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.submitBtn:hover{
+	background-color: #beaae9;
+	color: white;	
+}
+
+.submitBtnWrapper{
+	display: flex;
+	justify-content: center;
+	
+}
+
+/*상품항목추가 수정버전*/
+
+.listComponentWrapper{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 630px;
+	padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 150px;
+}
+
+.listComponent{
+	display: flex;
+	align-items: center;
+}
+
+.listComponentImg{
+	width: 80px;
+	height: 80px;
+	border-radius: 4px;	
+	background-color: #e0e0e0;
+    margin-right: 15px;
+}
+
+.listComponentContent{
+	margin-left: 10px;
+	flex-grow: 3; 
+}
+
+.listComponentTop{
+	display: flex;
+	font-size: 15px;
+}
+
+
+.listComponentBottom{
+	display: flex;
+	font-size: 15px;
+}
+
+.listComponentName{
+	width: 350px;
+	font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.listComponentPrice{
+	width: 350px;
+	font-size: 15px;
+    color: #333;
+    margin-top: 10px;
+   
+}
+
+.listComponentStock{
+	width: 100px;
+    font-size: 15px;
+    color: #333;
+	margin-left: 10px;
+}
+
+.listComponentMax{
+	width : 100px;
+    font-size: 15px;
+    color: #333;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.listComponentBtn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.editBtn {
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+	width: 90px;
+	height: 35px;
+}
+
+.editBtn:hover {
+    background-color: #0056b3;
+}
+
+
+.delBtn {
+    position: absolute;
+	margin-left : 655px;
+	margin-bottom : 92px;
+    padding: 2px 6px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    transition: background-color 0.3s, opacity 0.3s;
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    opacity: 0.8;
+}
+
+.delBtn:hover {
+    background-color: #c82333;
+    opacity: 1;
+}
+
+
+.nameInput, .priceInput{
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	font-size: 15px;
+	border-bottom-color: #A9A8A8;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom : 10px;
+	padding-top : 5px;
+	background-color: #f9f9f9;
+
+}
+
+
+.dpnameClass >input{
+	width: 210px;
+	height: 30px;
+}
+
+.dppriceClass >input{
+	width: 210px;
+	height: 30px;
+}
+

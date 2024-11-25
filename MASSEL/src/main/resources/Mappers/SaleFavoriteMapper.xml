@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.SaleFavoriteDAO">
+	<insert id="insertFavorite">
+		insert into sale_favorite (sno, id) values (#{sno},#{userID})
+	</insert>
+	<delete id="deleteFavorite">
+		delete from sale_favorite where sno = #{sno} and id = #{userID}
+	</delete>
+	<select id="isFavorite" resultType="int">
+		select count(*) from sale_favorite where sno = #{sno} and id = #{userID}
+	</select>
+	<select id="myFavoriteList" resultType="sfvo">
+		select * from sale_favorite where id = #{userId}
+	</select>
+</mapper>

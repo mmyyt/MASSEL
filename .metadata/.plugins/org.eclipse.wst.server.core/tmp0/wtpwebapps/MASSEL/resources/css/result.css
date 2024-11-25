@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+	
+}
+
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto; 
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.keyword{
+	height: 80px;
+	text-align: center;
+}
+
+.keywordText{
+	font-size: 25px;
+}
+
+.saleList h2, .demandSurveyList h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    
+    margin-top: 20px;
+}
+
+
+.item-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+    width: 180px;
+}
+
+.item-box img {
+    width: 100%;
+    height: 180px; 
+    border-radius: 4px;
+    margin-bottom: 10px;
+    object-fit: cover; 
+}
+
+
+.item-title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;
+    width: 100%; 
+    height : 80px;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    
+}
+
+
+.item-nickname {
+    font-size: 0.9em;
+    color: #555;
+    text-align: left;
+}
+}
+
+.noResult{
+	margin-top: 20px;
+}
+
+.noResult div:first-child{
+	font-size: 20px;
+}
+
+/*수요조사폼*/
+
+.demandSurveyList{
+	margin-top: 50px;
+}

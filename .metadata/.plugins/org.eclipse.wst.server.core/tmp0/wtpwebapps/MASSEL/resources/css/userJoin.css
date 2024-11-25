@@ -1,0 +1,532 @@
+@charset "UTF-8";
+
+.nav {
+	width: 100%;
+	height: 50px;
+	border: 1px solid black;
+	background-color: black;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	width: 700px;
+	height: 1100px;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+input {
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	font-size: 17px;
+	border-bottom-color: #A9A8A8;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+}
+
+p {
+	font-size: 13px;
+}
+
+.div0 {
+	margin-top: 50px;
+	width: 100%;
+	height: 130px;
+	background-color: white;
+	position: relative;
+}
+
+.line {
+	margin-top: 30px;
+}
+
+.joinTitle {
+	font-size: 45px;
+	text-align: center;
+	color: #212529;
+}
+
+/* id */
+.div1 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.idText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 22px;
+}
+
+.idIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.idArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+}
+
+.idMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* pw  */
+.div2 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+	margin-top: 10px;
+}
+
+.pwText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 25px;
+}
+
+.pwIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.pwArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+	padding-right: 35px;
+}
+
+.pwMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+.pwVisibility {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwVisibility_off {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwcVisibility {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwcVisibility_off {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+/*pwc */
+.div3 {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	margin-top: 10px;
+}
+
+.pwcText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 22px;
+}
+
+.pwcIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.pwcArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+	padding-right: 35px;
+}
+
+.pwcMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* nickname  */
+.div4 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+	margin-top: 15px;
+}
+
+.nickText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 22px;
+}
+
+.nickIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.nickArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+}
+
+.nickMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* profile */
+.div5 {
+	position: relative;
+	width: 100%;
+	height: 200px;
+}
+
+.profileText {
+	position: absolute;
+	display: inline-block;
+	top: 80px;
+	left: 40px;
+
+}
+
+#profileModalBtn {
+	position: absolute;
+	left: 30px;
+}
+
+#profileImg {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	left: 150px;
+	top: 25px;
+	transition: all 2s;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#profileImgDiv:hover {
+	transition: all 2s;
+}
+
+/* ===모달창부분====  */
+#modal {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
+.modalBody {
+	width: 750px;
+	height: 770px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	/* background-color: #fff; */
+	background-color : #212529;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	
+}
+
+.modalTitle {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 25px;
+	margin-top: 10px;
+	color: white;	
+	cursor: default;
+}
+
+#closeBtn {
+	cursor: pointer;
+	float: right; 
+	font-size: 25px;		
+	margin-right: 20px;
+	display : inline-block;
+}
+
+#closeBtn:hover{
+	color: #faa307;
+}
+
+.wrapper {
+	width: 700px;
+	height: 600px;
+	margin: 0 auto;
+	background-color: #212529;
+	overflow-y: auto;	
+	-ms-overflow-style:none;	
+}
+
+.wrapper::-webkit-scrollbar { display:none; }
+
+/*============================================  */
+
+/* email */
+.div6 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.emailText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 16px;
+}
+
+.emailInput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 5px;
+}
+
+.emailArea {
+	position: absolute;
+	width: 350px;
+	height: 40px;
+	padding-left: 10px;
+
+	/* left: 10px; */
+}
+
+.emailMsg {
+	position: absolute;
+	top: 51px;
+	left: 150px;
+}
+
+.emailBtn {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	right: 47px;
+	background-color: #BCBCBC;
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	color: white;
+}
+
+/* .emailBtn:hover{
+	background-color: #faa307;
+	color: white;
+} 
+ */
+/* 이메일인증 modal */
+#emailPopup {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+@
+keyframes fadeIn { 0% {
+	opacity: 0;
+}
+
+100
+%
+{
+opacity
+:
+1;
+}
+}
+@
+keyframes fadeOut { 0% {
+	opacity: 1;
+}
+
+100
+%
+{
+opacity
+:
+0;
+}
+}
+.emailPopup_content {
+	width: 350px;
+	height: 120px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;
+}
+
+.emailModalTitle {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.emailCloseBtn {
+	border-top: 1px solid #212529;
+	cursor: pointer;
+	font-size: 25px;
+	background-color: #212529;
+	color: white;
+	height: 50px;
+	margin-top: 28px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.emailCloseText {
+	margin-top: 15px;
+}
+
+/* 이메일인증 */
+.div7 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.emailcText {
+	position: absolute;
+	display: inline-block;
+	left: 30px;
+	top: 30px;
+}
+
+.emailcInput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.emailcArea {
+	position: absolute;
+	width: 350px;
+	height: 40px;
+	padding-left: 10px;
+}
+
+.emailcMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/*button  */
+.div9 {
+	width: 100%;
+	height: 200px;
+	background-color: white;
+	position: relative;
+}
+
+.signBtn {
+	position: absolute;
+	width: 500px;
+	height: 50px;
+	top: 80px;
+	left: 100px;
+	font-size: 15px;
+	border-radius: 4px;
+	border: none;
+	background-color: #BCBCBC;
+	color: white;
+	transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+
+

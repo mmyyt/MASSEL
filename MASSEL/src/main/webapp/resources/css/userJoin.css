@@ -1,0 +1,399 @@
+@charset "UTF-8";
+
+.nav {
+	width: 100%;
+	height: 50px;
+	border: 1px solid black;
+	background-color: black;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	width: 700px;
+	height: 1100px;
+	margin: 0 auto;
+/* 	background-color: pink; */
+	margin-top: 120px;
+}
+
+input {
+	/* outline: none; */
+	/* border: none; */
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	/* 	border-color: #969696; */
+	font-size: 17px;
+	border-bottom-color: #A9A8A8;
+}
+
+input:focus {
+	outline: none;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+}
+
+p {
+	font-size: 13px;
+}
+
+.div0 {
+	margin-top: 50px;
+	width: 100%;
+	height: 130px;
+	background-color: white;
+	position: relative;
+}
+
+.line {
+	margin-top: 30px;
+}
+
+.joinTitle {
+	font-size: 45px;
+	text-align: center;
+	color: #212529;
+}
+
+/* id */
+.div1 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.idText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 22px;
+}
+
+.idIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.idArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	/* 	margin: 12px 0px 0px;	 */
+}
+
+.idMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* pw  */
+.div2 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+	margin-top: 10px;
+}
+
+.pwText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 25px;
+}
+
+.pwIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.pwArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+	padding-right: 35px;
+}
+
+.pwMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+.pwVisibility {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwVisibility_off {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwcVisibility {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+.pwcVisibility_off {
+	position: absolute;
+	right: 65px;
+	cursor: pointer;
+	top: 20px;
+}
+
+/*pwc */
+.div3 {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	margin-top: 10px;
+}
+
+.pwcText {
+	position: absolute;
+	display: inline-block;
+	/* 	left: 35px;
+	top: 28px; */
+	left: 40px;
+	top: 22px;
+}
+
+.pwcIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.pwcArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+	padding-right: 35px;
+}
+
+.pwcMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* nickname  */
+.div4 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+	margin-top: 15px;
+}
+
+.nickText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 22px;
+}
+
+.nickIput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.nickArea {
+	position: absolute;
+	width: 500px;
+	height: 40px;
+	padding-left: 10px;
+	top: 10px;
+	left: 140px;
+}
+
+.nickMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/* profile */
+.div5 {
+	position: relative;
+	width: 100%;
+	height: 200px;
+	/* background-color: blue; */
+}
+
+.profileText {
+	position: absolute;
+	display: inline-block;
+	top: 80px;
+	left: 40px;
+
+}
+
+#profileModalBtn {
+	position: absolute;
+	left: 30px;
+	/* margin-left: 330px; */
+}
+
+#profileImg {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	/* background-color: black; */
+	border-radius: 50%;
+	/* background-image: url("/resources/img/userDefaultImg.png"); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	left: 150px;
+	top: 25px;
+	transition: all 2s;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/*============================================  */
+
+/* email */
+.div6 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.emailText {
+	position: absolute;
+	display: inline-block;
+	left: 40px;
+	top: 16px;
+}
+
+.emailInput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 5px;
+}
+
+.emailArea {
+	position: absolute;
+	width: 350px;
+	height: 40px;
+	padding-left: 10px;
+
+	/* left: 10px; */
+}
+
+.emailMsg {
+	position: absolute;
+	top: 51px;
+	left: 150px;
+}
+
+.emailBtn {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	right: 47px;
+	background-color: #BCBCBC;
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	color: white;
+}
+
+
+/* 이메일인증 */
+.div7 {
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	position: relative;
+}
+
+.emailcText {
+	position: absolute;
+	display: inline-block;
+	left: 30px;
+	top: 30px;
+}
+
+.emailcInput {
+	position: absolute;
+	display: inline-block;
+	left: 140px;
+	top: 10px;
+}
+
+.emailcArea {
+	position: absolute;
+	width: 350px;
+	height: 40px;
+	padding-left: 10px;
+}
+
+.emailcMsg {
+	position: absolute;
+	top: 53px;
+	left: 150px;
+}
+
+/*button  */
+.div9 {
+	width: 100%;
+	height: 200px;
+	background-color: white;
+	position: relative;
+}
+
+.signBtn {
+	position: absolute;
+	width: 500px;
+	height: 50px;
+	top: 80px;
+	left: 100px;
+	font-size: 15px;
+	border-radius: 4px;
+	border: none;
+	background-color: #BCBCBC;
+	color: white;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	cursor: not-allowed;
+}
+
+
+

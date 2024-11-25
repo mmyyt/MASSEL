@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.ChatRoomExitDAO">
+	<insert id="insertRoomExit">
+		insert into chat_room_exit (id, room_id, is_exit) values (#{sender}, #{roomId}, 0)
+	</insert>
+	<update id="updateIsExit">
+		update chat_room_exit set is_exit = 1 where id = #{id} and room_id = #{roomId}
+	</update>
+	<select id="getIsExitCount" resultType="int">
+		select count(*) from chat_room_exit where room_id = #{roomId} and is_exit = 1
+	</select>
+</mapper>

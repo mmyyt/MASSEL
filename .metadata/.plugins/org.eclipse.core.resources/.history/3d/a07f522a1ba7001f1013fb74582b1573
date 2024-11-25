@@ -1,0 +1,533 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap{
+	width: 100%;
+	/* background-color: red; */
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.dsDetail{
+	width: 1100px;
+	padding-top : 100px;
+	display: flex;
+}
+
+
+.leftwrap{
+	/* background-color: blue; */
+	width: 600px;
+		
+}
+
+
+/* .rightwrap{
+	background-color: green;
+	width: 40%;
+	margin-left: 100px;
+	position: fixed;
+	margin-left: 650px;
+} */
+
+
+/*@@@@@@@@@@@@@@@왼쪽부분*/
+
+.leftHeader{
+	width: 100%;
+	height: 100px;
+	/* background-color: gray; */
+	display: flex;
+	flex-direction: column; /*세로로 쌓으려면 이렇게 해야함*/
+	padding: 10px;
+	/* border-bottom: 1px solid #ccc; */
+}
+
+.status{
+    width: 100px;
+    height: 60px;
+    background-color: red;
+    text-align: center;
+   	padding: 10px 0;
+    font-weight: bold;
+    border-radius: 8px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; /* title과 아래 row 사이의 간격 추가 */
+    margin-top: 30px;
+    padding-bottom: 7px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between; /* date와 viewCount를 좌우로 배치 */
+    gap : 20px;
+    padding-bottom: 7px;
+}
+
+.registerDate {
+    font-size: 14px;
+    color: #666;
+    /* margin-top: 10px; */
+}
+
+.viewCount {
+    font-size: 14px;
+    color: #666;
+    /* margin-right: 300px; */
+    /* margin-top: 10px; */
+    margin-right: 90px;
+}
+
+.btnArea{
+	margin-right: 20px;
+	
+}
+
+.btnArea button{
+	border-radius: 7px;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+/*@@ 썸네일 @@*/
+.thumbnail {
+    width: 100%;
+    height: 260px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #f0f0f0; 
+    margin-top: 70px;
+}
+
+.dsthumbnail {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* @@ 기간 @@ */
+
+.date {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); 
+}
+
+.dateText {
+	width : 300px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #c1c1c1;
+}
+
+.dateTime {
+    margin-right: 230px;
+    margin-top: 20px;
+    width: 700px;
+    font-size: 14px;
+}
+
+/*태그*/
+.tag{
+	width: 100%;
+	/* background-color: blue; */
+}
+
+
+/* 글쓴이 정보 */
+
+.writerInfo{
+	width: 100%;
+	height: 100px;
+	display: flex;
+	margin-top: 10px;
+}
+
+.writerImg{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden; 
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+	 
+}
+
+.writerName{
+	width: 400px;
+	font-size: 17px;
+	margin-top: 32px;
+}
+
+.message{
+	margin-top: 30px;
+	margin-left: 25px;
+	border-radius: 10px;
+}
+
+.messageBtn{
+	width: 130px;
+	height: 40px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: none;
+	background-color: #beaae9;
+}
+
+
+
+/* 디테일 */
+/* .detail{
+	width: 100%;
+}
+.detailContent{
+	overflow: hidden;
+} */
+
+.detailContent img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.detail {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.detailContent {
+    overflow: hidden;
+}
+
+.detailText{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* 반투명한 검정색 */
+	font-size: 14px;
+	padding-top: 10px;
+	/* padding-bottom: 10px; */
+	/* background-color: #ccc; */
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
+}
+
+.dt{
+	margin-left: 15px;
+	font-size: 14px;
+}
+
+
+/* @@@@@@@@@@@@@오른쪽 @@@@@@@@@@@@@@@@@@@ */
+
+.rightwrap {
+    width: 500px;
+    min-width: 500px; 
+    height : 600px;
+    position: fixed;
+    right: 10%; 
+    top: 100px; 
+    box-sizing: border-box; 
+    overflow-y: auto;
+    margin-right: 120px;
+    margin-top: 50px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: white;
+    z-index: 900; 
+}
+
+
+.rightHeader{
+	width: 100%;
+	height: 60px;
+	/* background-color: red; */
+	border-bottom: 1px solid #ccc;
+
+	
+}
+
+.rightHeaderText{
+    line-height: 60px; 
+    margin-left: 30px;
+
+   
+}
+
+/*제품리스트 부분*/
+
+/* .productContainer{
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid black;
+} */
+
+.productList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.productContainer {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.productImg {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.productImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.productName {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.productPrice {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.productCount {
+    display: flex;
+    align-items: center;
+}
+
+.countBtn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.countInput {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+}
+
+
+/* 버튼 */
+.btnWrapper {
+    display: flex;
+    justify-content: center; 
+    padding: 10px;
+    margin-top: 20px;
+    /* position: fixed; */
+
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 7px;
+    width: 400px;
+    height: 80px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover{
+	background-color: #beaae9;
+	color: white;	
+}
+
+
+
+/* ~~~~~~~ 모달창 ~~~~~*/
+
+.modal-overlay { /*검정색배경 전체바탕부분임  */
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none; /*이걸넣어줘야 맨첨에 안뜸..  */
+	z-index: 910;
+}
+
+.modalBody {
+	width: 600px;
+	height: 770px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color : white;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 8px;
+	
+}
+
+.modalTitle{
+	width : 578px;
+	display: flex;
+	/* background-color: yellow; */
+	height: 39px;
+	border-radius: 5px;
+	position: fixed;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.modalText{
+	font-size: 17px;
+	margin-top: 10px;
+	margin-left: 15px;
+	
+}
+
+.closeBtn{
+	cursor: pointer;
+	margin-left: 470px;
+	margin-top: 10px;
+	font-size: 17px;
+}
+
+
+/* 모달창 제품부분 */
+
+.modalContent{
+    margin-top: 60px;
+    height: calc(100% - 60px); 
+    overflow-y: auto; 
+    padding: 20px; 
+    box-sizing: border-box;
+    
+}
+.myProductList {
+    padding: 0 20px; 
+   
+    
+}
+
+.listProduct {
+    display: flex;
+    align-items: center;
+    margin-top : 15px;
+    margin-bottom: 10px; 
+  
+}
+
+.listProductImg img {
+    width: 80px; 
+    height: 80px;
+    object-fit: cover;
+    margin-right: 20px; 
+}
+
+.listProductName {
+    flex: 1; 
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.listProductPrice {
+    font-size: 14px;
+    margin-right: 20px; 
+}
+
+.listProductCount {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.emailDiv{
+	border-top: 1px solid #ddd;
+	display: flex;
+	margin-top: 20px;
+	margin-left: 10px;
+	padding: 10px;
+}
+
+.emailText{
+	font-size: 15px;	
+}
+
+.emailInput>input{
+	width: 350px;
+	height: 35px;
+	margin-left: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 14px;
+	border-radius: 7px;	
+}
+
+.emailInput input{
+	border-color: #aaa;
+    box-shadow: none; 	
+}
+
+.totalPriceDiv{
+	border-top: 1px solid #ddd;
+	display: flex;
+	margin-top: 20px;
+	margin-left: 10px;
+	padding: 10px;	
+}
+
+.totalText{
+	font-size: 15px;	
+}
+
+.totalPrice{
+	margin-left: 377px;		
+}
+
+.participationBtnWrapper{
+	width: 400px;
+	margin-left: 70px;
+	margin-top: 70px;
+}
+
+.participationBtn{
+	width: 400px;
+	height: 40px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+}

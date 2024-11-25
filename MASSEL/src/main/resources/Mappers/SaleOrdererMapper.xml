@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.SaleOrdererDAO">
+	<insert id="insertUserData">
+		insert into sale_orderer (sno, order_no, id, name, email, phone_number, refund_account, refund_bank, refund_account_holder)
+		value (#{sno},#{orderNo},#{id},#{name},#{email},#{phoneNumber},#{refundAccount},#{refundBank,},#{refundAccountHolder})
+	</insert>
+	<select id="getMaxOrderNo" resultType="int">
+		select IFNULL(max(order_no), 0) from sale_orderer;
+	</select>
+	<select id="getOrderDetail" resultType="soidto">
+		SELECT 
+            so.order_no, 
+            so.id, 
+            so.name AS ordererName, 
+            so.phone_number AS ordererPhone, 
+            so.email AS ordererEmail,
+            so.refund_account AS refundAccount,
+            so.refund_bank AS refundBank,
+            so.refund_account_holder AS refundAccountHolder,
+            so.order_date AS orderDate,
+            so.order_status As orderStatus,
+            ss.recipient_name AS recipientName, 
+            ss.recipient_phone_number AS recipientPhoneNumber, 
+            ss.recipient_postal_code AS recipientPostalCode,
+            ss.recipient_address AS recipientAddress, 
+            ss.recipient_detail_address AS recipientDetailAddress,
+            ss.shipping_method AS shippingMethod, 
+            ss.shipping_cost AS shippingCost,
+            ss.shipping_note AS shippingNote,
+            GROUP_CONCAT(CONCAT(sp.spname, ':', sp.count, '개') SEPARATOR ', ') AS products,
+            (sum(sp.spprice * sp.count)+ss.shipping_cost) as totalPrice,
+            sum(sp.spprice * sp.count) as productPrice
+        FROM 
+            sale_orderer so 
+        JOIN 
+            sale_orderer_shipment ss ON so.order_no = ss.order_no 
+        JOIN 
+            sale_orderer_product sp ON so.order_no = sp.order_no 
+        WHERE 
+            so.sno = #{sno} and so.order_status != #{pendingStatus}
+        GROUP BY 
+            so.order_no, so.id, so.name, so.phone_number, so.email, so.refund_account,
+            so.refund_bank, so.refund_account_holder, so.order_date, so.order_status,
+            ss.recipient_name, ss.recipient_phone_number, ss.recipient_postal_code, 
+            ss.recipient_address, ss.recipient_detail_address, ss.shipping_method, 
+            ss.shipping_cost, ss.shipping_note;
+	</select>
+	<select id="getOrdererDetail" resultType="soidto">
+		SELECT 
+            so.order_no, 
+            so.id, 
+            so.name AS ordererName, 
+            so.phone_number AS ordererPhone, 
+            so.email AS ordererEmail,
+            so.refund_account AS refundAccount,
+            so.refund_bank AS refundBank,
+            so.refund_account_holder AS refundAccountHolder,
+            so.order_date AS orderDate,
+            so.order_status As orderStatus,
+            ss.recipient_name AS recipientName, 
+            ss.recipient_phone_number AS recipientPhoneNumber, 
+            ss.recipient_postal_code AS recipientPostalCode, 
+            ss.recipient_address AS recipientAddress, 
+            ss.recipient_detail_address AS recipientDetailAddress, 
+            ss.shipping_method AS shippingMethod, 
+            ss.shipping_cost AS shippingCost, 
+            ss.shipping_note AS shippingNote, 
+            GROUP_CONCAT(CONCAT(sp.spname, ':', sp.count, '개') SEPARATOR ', ') AS products,
+            (sum(sp.spprice * sp.count)+ss.shipping_cost) as totalPrice,
+            sum(sp.spprice * sp.count) as productPrice
+        FROM 
+            sale_orderer so 
+        JOIN 
+            sale_orderer_shipment ss ON so.order_no = ss.order_no 
+        JOIN 
+            sale_orderer_product sp ON so.order_no = sp.order_no 
+        WHERE 
+            so.order_no = #{orderNo} 
+        GROUP BY 
+            so.order_no, so.id, so.name, so.phone_number, so.email, so.refund_account,
+            so.refund_bank, so.refund_account_holder, so.order_date, so.order_status,
+            ss.recipient_name, ss.recipient_phone_number, ss.recipient_postal_code, 
+            ss.recipient_address, ss.recipient_detail_address, ss.shipping_method, 
+            ss.shipping_cost, ss.shipping_note;
+	</select>
+	<select id="getMyParticipationList" resultType="sovo">
+		select * from sale_orderer where id = #{id}
+	</select>
+	<select id="getSno" resultType="sovo">
+		select * from sale_orderer where order_no = #{orderNo}
+	</select>
+	<select id="getIsParticipated" resultType="int">
+		select count(*) from sale_orderer where sno = #{sno} and id = #{userID} 
+	</select>
+	<select id="getOrderList" resultType="sovo">
+		select * from sale_orderer where order_status = #{status} 
+	</select>
+	<update id="updateOrderStatus">
+		update sale_orderer set order_status = #{orderStatus} where sno = #{sno}
+	</update>
+	<update id="changeOrderStatus">
+		update sale_orderer set order_status = #{orderStatus} where order_no = #{realOrderNo}
+	</update>
+	<update id="cancleOrder">
+		update sale_orderer set order_status = #{status} where order_no = #{realOrderNo}
+	</update>
+	<update id="updateBuyerOrder">
+		update sale_orderer set order_status = #{orderStatus} where order_no = #{orderNo}
+	</update>
+	<delete id="deleteOrderNo">
+		delete from sale_orderer where order_no = #{orderNo}
+	</delete>
+	<select id="getParticipantCount" resultType="int">
+		select count(*) from sale_orderer where sno = #{sno}
+	</select>
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.DemandSurveyImgDAO">
+	<insert id="registerDSImg">
+		insert into demand_survey_img (dno, uuid, save_dir, file_name, file_type, file_size) values
+		(#{dno},#{uuid},#{saveDir},#{fileName},#{fileType},#{fileSize})
+	</insert>
+	<select id="getDSimgList" resultType="dsivo">
+		select * from demand_survey_img where dno = #{dno} and file_type= 1 
+	</select>
+	<select id="getThumbnailFile" resultType="dsivo">
+		select * from demand_survey_img where dno = #{dno} and file_type = 1
+	</select>
+	<update id="updateDemandSurveyImg">
+		update demand_survey_img set uuid = #{dsivo.uuid}, save_dir = #{dsivo.saveDir}, file_name = #{dsivo.fileName},
+		file_type = #{dsivo.fileType}, file_size = #{dsivo.fileSize} where dno = #{dno}
+	</update>
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.ChatRoomDAO">
+	<insert id="createNewRoom">
+		insert into chat_room (room_id, sender, recipient) values (#{roomId},#{sender},#{recipient})
+	</insert>
+	<select id="getExistingRoom" resultType="crvo">
+		select * from chat_room where (sender = #{sender} and recipient = #{recipient})
+		or (sender = #{recipient} and recipient = #{sender})
+	</select>
+	<select id="getChatRoom" resultType="crvo">
+		select * from chat_room where room_id = #{roomId}
+	</select>
+	<select id="getChatRoomList" resultType="crvo">
+		select cr.room_id, cr.sender, cr.recipient, cr.create_date 
+		from chat_room cr
+		join chat_room_exit cre on cr.room_id = cre.room_id
+		join (select room_id, max(send_date) as last_send_date
+		from chat group by room_id) ch on cr.room_id = ch.room_id
+		where (cr.sender = #{userId} or cr.recipient = #{userId})
+		and (cre.id = #{userId} and cre.is_exit = 0)
+		order by ch.last_send_date desc
+	</select>
+	<delete id="deleteRoom">
+		delete from chat_room where room_id = #{roomId}
+	</delete>
+</mapper>

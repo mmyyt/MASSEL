@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.DemandSurveyDAO">
+	<insert id="insertSurvey">
+		insert into demand_survey (id, dtitle, ddetail, category_id) values (#{id},#{dtitle},#{ddetail},#{categoryId})
+	</insert>
+	<select id="getDSList" resultType="dsvo">
+		select a.dno, dtitle, id, dview_count, dis_del, status from (
+		select dno from demand_survey
+		order by dno desc
+		limit #{startPage}, #{qty}
+		)a left join demand_survey b
+		on a.dno = b.dno
+	</select>
+	<select id="getDSDetail" resultType="dsvo">
+		select * from demand_survey where dno = #{dno}
+	</select>
+	<update id="updateDS">
+		update demand_survey set dtitle = #{dtitle} , ddetail = #{ddetail} where dno = #{dno}
+	</update>
+	<select id="selectDno" resultType="int">
+		select IFNULL(max(dno), 1) from demand_survey
+	</select>
+	<insert id="tmpRegister">
+		insert into demand_survey (id, dtitle, ddetail) values (#{id},#{dtitle},#{ddetail})
+	</insert>
+	<insert id="registerDS">
+		insert into demand_survey (id, dtitle, ddetail, start_date, end_date) values (#{id},#{dtitle},#{ddetail},#{startDate},#{endDate})
+	</insert>
+	<insert id="insertDemandSurvey">
+		insert into demand_survey (id,dtitle,ddetail,category_id,start_date, end_date, full_date, status) values (#{id},#{dtitle},#{ddetail},#{categoryId},
+		#{startDate},#{endDate},#{fullDate}, #{status})
+	</insert>
+	<select id="getDsList" resultType="dsvo">
+		select * from demand_survey where id = #{id} order by dreg_date desc
+	</select>
+	<select id="getDsFormList" resultType="dsvo">
+		select dno, start_date, end_date, status from demand_survey where status != #{endStatus}
+	</select>
+	<update id="updateStatus">
+		update demand_survey set status = #{status} where dno = #{dno}
+	</update>
+	<update id="updateReadCount">
+		update demand_survey set dview_count = dview_count + 1 where dno = #{dno}
+	</update>
+	<select id="getDemandSurvey" resultType="dsvo">
+		select * from demand_survey where dis_del = 0 order by dreg_date desc limit 10 
+	</select>
+	<update id="updateDemandSurvey">
+		update demand_survey set dtitle = #{dtitle}, ddetail = #{ddetail}, category_id = #{categoryId},
+		start_date = #{startDate}, end_date = #{endDate}, full_date = #{fullDate}, status = #{status}
+		where dno = #{dno}
+	</update>
+	<update id="deleteDemand">
+		update demand_survey set dis_del = 1 where dno = #{dno}
+	</update>
+	<select id="getDemandSurveySearch" resultType="dsvo">
+		select * from demand_survey where dtitle like concat('%', #{keyword}, '%') and dis_del = 0 order by dreg_date desc
+	</select>
+	<select id="getPopularList" resultType="dsvo">
+		select * from demand_survey order by dview_count desc limit 10
+	</select>
+	<select id="getTotalCount" resultType="int">
+		select count(dno) from demand_survey
+	</select>
+</mapper>

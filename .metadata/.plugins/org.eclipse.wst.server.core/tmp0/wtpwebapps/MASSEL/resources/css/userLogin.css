@@ -1,0 +1,357 @@
+@charset "UTF-8";
+
+a{
+	color: black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: black;
+}
+
+#findBtn > a:hover{
+	color: black;
+}
+
+body{
+   margin: 0;
+   padding: 0;
+}
+
+
+input {
+
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	border-color: #969696;
+	font-size: 17px;
+}
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+}
+
+input:focus{
+	outline: none;
+}
+
+
+.find{
+	text-decoration: none;
+	color: #545454;
+	font-size: 15px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+
+
+.find:after {
+  display:block;
+  content: '';
+  border-bottom: 1px solid #1C1C1C;  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+
+.find:hover:after{
+	transform: scaleX(1);
+	color: black;
+	
+} 
+ 
+a.find:after{
+	transform-origin: 0% 50%;
+	color: black;
+}
+
+.wrap{
+	width : 700px;
+	height : 700px;
+	margin: 0 auto;
+	margin-top : 100px;
+}
+
+.loginBody{
+	position : relative;
+	width: 700px;
+	height: 300px;
+}
+
+.loginText{
+	position: relative;
+	width: 700px;
+	height: 200px;
+	text-align: center;
+	font-size: 50px;
+	top: 40px;
+}
+
+#line{
+	position : relative;
+	height: 2px;
+	width : 700px;
+	border : 0;
+	background: #9C9C9D;
+	top: 20px;
+}
+
+.idArea{
+	position : relative;
+	width: 700px;
+	height: 70px;	
+}
+
+.pwArea{
+	position : relative;
+	width: 700px;
+	height: 70px;
+}
+
+.idInput{
+	position : absolute;
+	width: 700px;
+	left: 90px;
+}
+
+.idInputArea{
+	width: 500px;
+	height: 50px;
+	margin: 0 auto;
+	padding-left: 10px;
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+.pwInput{
+	position : absolute;
+	width: 700px;
+	left: 90px;
+}
+
+.pwInputArea{
+	width: 500px;
+	height: 50px;
+	margin: 0 auto;
+	padding-left: 10px;
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+
+#findBtn{
+	position: absolute;
+	right: 120px;
+	top: 3px;
+	
+}
+#findLine{
+	position: absolute;
+	top : 0.1px;
+	right: 100px;
+	padding-left : 10px;
+	height: 13px;
+	cursor: default;
+}
+
+#findID{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#findPW{
+	display: inline-block;
+}
+
+.loginButtonArea {
+  background: #212529;
+  margin : 20px auto;
+  width : 400px;
+  height : 50px;
+  overflow: hidden;
+  text-align : center;
+  transition : .2s;
+  cursor : pointer;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+  border: none; 
+  margin-top: 70px;
+
+}
+.loginHoverArea {
+  position : relative;
+  width : 400px;
+  height : 100px;
+  padding-top: 2px;
+  background : #beaae9;
+  left : -400px;
+  transition : .3s;
+  border: none;  
+  top: -60px;
+}
+.loginBtn {
+  color : white;
+  transition : .3s;
+  border: none;
+  width: 400px;
+  height: 50px;
+  background-color: #212529;  
+  border-radius: 4px;
+  cursor: pointer;
+}
+.loginBtnHover {
+  margin-right : 10px;
+  color : #FFF;
+  border: none;
+  width: 100px;
+  height: 50px;
+  background-color : #beaae9;
+  position: absolute;
+  top: 10px;
+  left: 289px;
+  cursor: pointer;
+} 
+
+.loginButtonArea:hover .loginHoverArea{
+  left: -280px; 
+}
+
+.loginButtonArea:hover .loginBtn{ 
+  margin-left : 60px;  
+}
+
+.loginButtonArea:active {
+  box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+}
+
+
+.btnArea{
+	width: 700px;
+	height: 300px;
+	position: absolute;
+	top: 130px;
+}
+
+.joinButtonArea {
+  background: #212529;
+  margin : 20px auto;
+  width : 400px;
+  height : 50px;
+  overflow: hidden;
+  text-align : center;
+  transition : .2s;
+  cursor : pointer;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+  border: none;
+  margin-top: 30px;
+}
+
+.joinHoverArea {
+  position : relative;
+  width : 400px;
+  height : 100px;
+  padding-top: 2px;
+  background : #beaae9;
+  left : -400px;  /*-400  */
+  transition : .3s;
+  border: none; 
+  top: -60px;
+}
+
+.joinBtn {
+  color : white;
+  transition : .3s;
+  border: none;
+  width: 400px;
+  height: 50px;
+  background-color: #212529;
+  cursor: pointer;
+}
+
+.joinBtnHover {
+  margin-right : 10px;
+  color : #FFF;
+  border: none;
+  width: 100px;
+  height: 50px;
+  background-color : #beaae9;
+  position: absolute;
+  top: 12px;
+  left: 289px;
+  cursor: pointer;
+} 
+.joinButtonArea:hover .joinHoverArea{
+  left: -280px;
+}
+.joinButtonArea:hover .joinBtn{ 
+  margin-left : 60px;  
+}
+.joinButtonArea:active {
+  box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+}
+
+
+#loginPopup { 
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+	animation: fadeIn 0.3s ease-in-out;
+	
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.loinPopup_content {
+	width: 350px;
+	height: 120px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;	
+}
+
+.modalTitle {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.closeBtn {
+	border-top : 1px solid #212529;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: #212529;
+	color: white;
+	height : 50px;
+	margin-top: 40px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.closeText{
+	margin-top: 7px;
+}

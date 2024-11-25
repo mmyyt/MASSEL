@@ -1,0 +1,303 @@
+username : masselm
+password : 0901
+db name : masseldb
+
+create database masseldb;
+
+create user 'masselm'@'localhost' identified by '0901';
+grant all privileges on masseldb.* to 'masselm'@'localhost' with grant option;
+flush privileges;
+
+
+table User
+
+create table user(
+id varchar(100) not null,
+pw varchar(256) not null,
+email varchar(100) not null,
+nickname varchar(100) not null,
+isseller varchar(2) default "f",
+regdate datetime default now(),
+primary key(id));
+
+alter table user add role varchar(20) default 'user';
+
+create table user_img(
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_type tinyint(1) default 1,
+file_size int,
+reg_date datetime default now(),
+id varchar(100),
+primary key(uuid),
+foreign key (id) references user(id) on delete cascade
+);
+
+------------------------------------------------
+
+table demand_survey
+
+create table demand_survey(
+dno int not null auto_increment,
+dtitle varchar(500) not null,
+ddetail text,
+id varchar(100) not null,
+dview_count int,
+dis_del varchar(10),
+dis_end varchar(10),
+dreg_date datetime default now(),
+dparticipate_count int,
+primary key(dno),
+foreign key(id) references user(id) on delete cascade on update cascade);
+
+alter table demand_survey modify dis_end varchar(10) default "false";
+alter table demand_survey modify dis_del varchar(10) default "false";
+alter table demand_survey modify dview_count int default 0;
+alter table demand_survey modify dparticipate_count int default 0;
+alter table demand_survey add endDate datetime;
+alter table demand_survey add startDate datetime;
+ALTER TABLE demand_survey CHANGE startDate start_date  datetime;
+ALTER TABLE demand_survey CHANGE endDate end_date  datetime;
+
+alter table demand_survey add full_date varchar(100);
+alter table demand_survey add status varchar(50);
+-----------------------------------------------------
+
+table demand_survey_img
+
+create table demand_survey_img(
+dno int,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_type tinyint(1) default 0,
+file_size int,
+reg_date datetime default now(),
+primary key(uuid));
+
+file_type 0 -> general file
+file_type 1 -> thumbnail file
+
+--------------------------------------------------------
+
+table demand_survey_product
+
+create table demand_survey_product(
+dno int,
+dpno int auto_increment,
+dpname varchar(256) not null,
+dpprice int not null,
+primary key(dpno));
+
+
+----------------------------------------------------------
+
+table category
+
+create table category(
+category_id int auto_increment primary key,
+name varchar(50) not null
+);
+
+insert into category (name) values ('애니메이션/만화/웹툰'),('아이돌/연예인'),('드라마'),
+('영화'),('아이돌'),('게임'),('의류/패션/악세사리'),('도서'),('문구'),('창작캐릭터'),('기타');
+
+---------------------------------------------------
+alter table demand_survey add category_id int;
+
+
+alter table demand_survey add constraint fk_category_id foreign key(category_id) references category(category_id);
+------------------------------------------
+
+table chat, chat_room
+
+create table chat(
+message_id int auto_increment primary key,
+rood_id varchar(255),
+sender varchar(255),
+content text,
+send_date timestamp default current_timestamp);
+
+ alter table chat add recipient varchar(255);
+
+create table chat_room(
+room_id varchar(255) primary key,
+sender varchar(255),
+recipient varchar(255),
+create_date timestamp default current_timestamp);
+
+create table chat_room_exit(
+room_id varchar(255) not null,
+id varchar(100),
+is_exit tinyint(1) default 0,
+foreign key (room_id) references chat_room(room_id)
+);
+
+CREATE TABLE chat_read (
+    message_id INT,
+    user_id VARCHAR(255),
+    is_read tinyint(1) default 0,
+    PRIMARY KEY (message_id),
+    FOREIGN KEY (message_id) REFERENCES chat(message_id)
+);
+
+alter table chat_read add room_id varchar(255);
+
+create table demand_survey_participation(
+dpno int not null,
+id varchar(100) not null,
+dpname varchar(256) not null,
+dpprice int not null,
+count int,
+participationDate datetime default now()
+);
+
+-------------------------------------------------------
+//판매글
+create table sale(
+sno int not null auto_increment,
+stitle varchar(500) not null,
+sdetail text,
+swriter varchar(100) not null,
+category int,
+sreg_date datetime default now(),
+start_date datetime,
+end_date datetime,
+is_del varchar(10) default "false",
+is_end varchar(10) default "false",
+view_count int,
+favorite_count int,
+refund_message text,
+primary key(sno));
+alter table sale add full_date varchar(100);
+
+alter table sale add shipping_exdate varchar(100); 
+alter table sale add shipping_instructions text;
+alter table sale modify is_del tinyint(1) default 0;
+
+//판매자 계좌정보
+create table sale_seller(
+sno int,
+swriter varchar(100),
+account_number varchar(100),
+account_holder varchar(100),
+bank_name varchar(100));
+
+
+//판매글 배송방법,정보
+create table sale_shipment(
+sno int,
+shipping_method varchar(100),
+shipping_cost int
+);
+
+//판매글 썸네일
+create table sale_img(
+sno int,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_type tinyint(1) default 1,
+file_size int,
+reg_date datetime default now(),
+primary key(uuid));
+
+file_type 0 -> general file
+file_type 1 -> thumbnail file
+alter table sale_img add constraint fk_sno_img foreign key(sno) references sale(sno) on delete cascade;
+
+//판매글 상품
+create table sale_product(
+spno int auto_increment not null,
+sno int,
+spname varchar(150) not null,
+spprice int not null,
+max_order_quantity int,
+stock int,
+primary key(spno));
+
+alter table sale_img change dno sno int;
+alter table sale_shipment change dno sno int;
+ALTER TABLE t CHANGE rood_id room_id VARCHAR(255);
+
+create table sale_product_img(
+sno int,
+spno int,
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_type tinyint(1) default 1,
+file_size int,
+reg_date datetime default now(),
+primary key(uuid),
+foreign key(spno) references sale_product(spno) on delete cascade
+);
+
+--------------------------------------------------------
+sale 구매 관련
+
+//구매자 기본 정보
+create table sale_orderer(
+sno int,
+order_no int auto_increment,
+id varchar(100),
+nickname varchar(100),
+name varchar(100),
+email varchar(100),
+phone_number varchar(100),
+sns_id varchar(100),
+refund_account varchar(100),
+refund_bank varchar(100),
+refund_account_holder varchar(100),
+order_date datetime default now(),
+primary key(order_no));
+
+//구매자 상품 관련 정보
+create table sale_orderer_product(
+sno int,
+order_no int,
+id varchar(100),
+spno int,
+spname varchar(150),
+spprice int,
+count int,
+order_date datetime default now(),
+total_price int
+);
+
+//구매자 배송정보
+create table sale_orderer_shipment(
+sno int,
+order_no int,
+id varchar(100),
+recipient_name varchar(100),
+recipient_phone_number varchar(100),
+recipient_email varchar(100),
+recipient_postal_code varchar(30),
+recipient_detail_address varchar(150),
+shipping_method varchar(100),
+shipping_cost int,
+shipping_note text
+);
+
+alter table sale_orderer_shipment add recipient_address varchar(150);
+
+-----------------------------------
+
+create table notification(
+listener varchar(100), 
+is_read tinyint(1) default 0,
+recieved_date datetime default now(),
+message_content text
+);
+
+create table default_img(
+uuid varchar(256) not null,
+save_dir varchar(256) not null,
+file_name varchar(256) not null,
+file_type tinyint(1) default 1,
+file_size int,
+reg_date datetime default now(),
+primary key(uuid),
+);

@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+li{
+	list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sideBar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+
+.sideBarContent {
+    padding: 10px;
+}
+
+
+.sideBarContent > div {
+    margin-bottom: 30px;
+}
+
+
+.myInfoTop, .sellerTop, .buyerTop {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+
+.sideBarContent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sideBarContent ul li {
+    margin: 10px 0;
+}
+
+
+.sideBarContent ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sideBarContent ul li a:hover {
+    background-color: #beaae9;
+
+    color: white;
+    font-weight: bold;
+}
+
+
+.sideBarContent ul li a.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+}
+
+/* 콘텐츠 영역 - 페이지의 나머지 부분 */
+.content {
+    width: 100%;
+    flex: 1;
+    margin-left: 220px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 600px;
+    position: relative;
+    margin-top: 80px;
+ 
+}
+
+/* 중앙에 큰 박스 */
+.centerBox {
+    width: 900px;
+    background-color: white;
+}
+
+.top{
+	display: flex;
+}
+
+
+.top-img img{
+	width: 130px;
+	height: 130px;
+	object-fit : cover;
+	border-radius: 5px;
+}
+
+.top-title{
+	margin-left: 50px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.top-btn{
+	margin-left: 50px;
+}
+
+.top-btn button{
+	border: none;
+	border-radius : 6px;
+	width: 100px;
+	height: 40px;
+	margin-right: 20px;
+	margin-top: 60px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-btn button:hover{
+	background-color: #beaae9;
+	color: white;	
+}
+
+.bottom{
+	margin-top: 30px;
+	width: 700px;
+}
+
+.bottom>div{
+	margin-top: 10px;
+}
+
+.paticipation{
+border-top: 1px solid #ccc;	
+}
+
+.participationProduct{
+	border-top: 1px solid #ccc;	
+}
+
+.pinfo{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 20px;
+
+}
+
+.bottom ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    list-style: none;
+}
+
+.bottom ul li {
+    margin-right: 10px; 
+}

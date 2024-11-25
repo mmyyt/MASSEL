@@ -1,0 +1,695 @@
+@charset "UTF-8";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+li{
+	list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sideBar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+
+.sideBarContent {
+    padding: 10px;
+}
+
+
+.sideBarContent > div {
+    margin-bottom: 30px;
+}
+
+
+.myInfoTop, .sellerTop, .buyerTop {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+
+.sideBarContent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sideBarContent ul li {
+    margin: 10px 0;
+}
+
+
+.sideBarContent ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sideBarContent ul li a:hover {
+    background-color: #beaae9;
+
+    color: white;
+    font-weight: bold;
+}
+
+
+.sideBarContent ul li a.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+}
+
+.content {
+    width: 100%;
+    flex: 1;
+    margin-left: 220px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 600px;
+    position: relative;
+    margin-top: 80px;
+ 
+}
+
+
+.centerBox {
+    width: 900px;
+    background-color: white;
+}
+
+/*썸네일*/
+.thumbnail img{
+	width: 250px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.topBox{
+	margin-top: 10px;
+	margin-left: 10px;
+	display: flex;
+}
+
+/*제목,기간,상태,버튼*/
+.rightDiv{
+	margin-left: 50px;
+}
+
+.state{
+	width: 70px;
+	height: 60px;
+	border-radius: 5px;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	margin: 0 auto 0 0;
+}
+.statusDiv{
+   background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: default;
+    
+}
+
+.title{
+	font-size: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.date{
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+.count{
+	display: flex;
+	margin-top: 30px;
+}
+
+.favoriteCount{
+	margin-right: 30px;
+	cursor: default;
+}
+
+.favoriteCount i{
+	color: red;
+}
+
+.viewCount{
+	cursor: default;
+}
+
+.btnWrapper{
+	margin-top: 30px;
+}
+
+.btnWrapper button{
+	width: 100px;
+	height: 40px;
+	margin-right: 5px;
+	border:  none;
+	margin-top: 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btnWrapper button:hover{
+	background-color: #beaae9;
+	color: white;
+}
+
+/*bottomBox*/
+
+.bottomBox{
+	margin-top: 30px;
+}
+
+.contentBtn button{
+	width: 150px;
+	height: 40px;
+	border: none;
+	cursor: pointer;
+	background: none;
+	margin-right: 7px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.detailDiv{
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.detailContent{
+	width: 870px;
+	margin-top: 10px;
+}
+
+.detailContentArea{
+	display: flex;
+	padding-bottom: 10px;
+}
+.detailContentArea > div {
+    flex: 1; 
+    padding: 10px; 
+}
+.detailContentArea > div:first-child {
+    border-right: 1px solid #ccc;
+}
+.titleText{
+	font-size: 19px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.info-list {
+     display: flex;
+	 padding: 0; 
+     margin: 0; 
+}
+
+.info-list li{
+	margin-bottom: 5px;
+}
+
+.info-list li:first-child {
+    width: 100px; 
+    text-align: left;
+}
+
+.info-list li:nth-child(2) {
+    flex: 1; 
+    text-align: left;
+}
+
+.saleContentArea{
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+/*참여자정보*/
+.participationForm{
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+.participationContent{
+	width: 870px;
+	margin-top: 10px;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px; 
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold; 
+    border-bottom: 2px solid #aaa;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.hidden{
+	display: none;
+}
+
+.underline {
+  	border-bottom: 2px solid black !important;
+  	font-weight: bold;     
+  	display: inline-block;
+}
+
+.btn{
+	border: none;
+	height: 40px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.orderNoValue{
+	accent-color: purple;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+
+/*select / 버튼*/
+
+#statusFilter{
+	width: 100px;
+	height: 35px;
+	border-radius: 7px;
+	padding: 5px;
+}
+
+.orderBtnWrapper{
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.orderBtnDiv{
+	margin-left: 370px;
+}
+
+.orderBtnDiv button{
+	margin-right: 10px;
+}
+
+.excelDown, .orderDelete{
+	width: 120px;
+	height: 40px;
+	border-radius: 7px;
+	padding: 3px;
+	border : none;
+	cursor: pointer;
+}
+
+.orderEdit{
+	width: 120px;
+	height: 40px;
+	border-radius: 7px;
+	padding: 3px;
+	border : none;
+	cursor: pointer;
+}
+
+/*모달창*/
+.modal-overlay {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
+.modalBody {
+	width: 1300px;
+	height: 450px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color : white;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 8px;
+	
+}
+
+.modalTitle{
+	width : 1280px;
+	display: flex;
+	height: 39px;
+	border-radius: 5px;
+	position: fixed;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; 
+}
+
+.modalText{
+	font-size: 17px;
+	margin-top: 10px;
+	margin-left: 15px;
+	
+}
+
+.closeBtn{
+	cursor: pointer;
+	margin-left: 1150px;
+	margin-top: 10px;
+	font-size: 17px;
+}
+
+.modalContent{
+	margin-top: 70px;
+}
+
+/*모달창 상세*/
+
+.infoTop{
+	display: flex;
+}
+
+.info-table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.info-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table td {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+    vertical-align: top;
+    text-align: left;
+}
+
+.info-table tr td:first-child {
+    background-color: #f3f3f3; 
+    font-weight: bold;
+}
+
+.info-table tr:nth-child(even) td {
+    background-color: #ffffff; 
+}
+
+.ft{
+	background-color: #ccc;
+}
+
+
+/*주문상태변경 모달창*/
+.modal-order-overlay{
+	position: fixed;
+	z-index: 1;
+	padding-top: 380px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	align-items: center;
+    justify-content: center;
+}
+
+.modal-order-Body{
+	width: 500px;
+	height: 200px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color : white;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 8px;
+	overflow: hidden; 
+}
+
+.modal-order-title{
+	width: 100%;
+	display: flex;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	align-items: center;
+	border-bottom: 1px solid #f1f1f1;
+	justify-content: space-between;
+	background-color: #f9f9f9;
+    height: 40px;
+
+}
+
+.modal-order-text{
+	font-size: 17px;
+	cursor: default;
+	font-weight: bold;
+	margin-left: 15px;
+}
+.order-closeBtn{
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.changeBtnWrapper{
+	margin-top: 20px;
+}
+
+.changeBtn{
+	width: 100px;
+	height: 40px;
+	border: none;
+	border-radius: 8px;
+	margin-left: 15px;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.modal-delete-overlay {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-delete-body {
+    width: 350px;
+    border: 1px solid #777;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.modal-delete-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #f9f9f9;
+    height: 40px;
+}
+
+.modal-delete-text {
+    font-weight: bold;
+}
+
+.modal-delete-closeBtn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.modal-delete-content {
+    padding: 20px 15px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+.deleteBtnWrapper {
+    width: 100%;
+    display: flex;
+}
+
+.deleteBtn {
+    width: 100%;
+    padding: 15px 0; 
+    border: none;
+    background-color: #343a40;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+	border-radius: 7px;
+	margin-top: 20px;
+}
+
+.deleteBtn:hover {
+    background-color: #23272b;
+}
+
+.dataId{
+	margin-left: 20px;
+}
+
+.sendChatBtn{
+	margin-left: 30px;
+	border-radius: 8px;
+	border : none;
+	height: 35px;
+	width: 100px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.sendChatBtn:hover {
+    background-color: #beaae9;
+    color: white;
+}
+
+
+
+.deleteModal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.deleteModal {
+    background: white;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+
+.deleteModal-body {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.deleteModal-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #f9f9f9;
+}
+
+/* 버튼 스타일 */
+.deleteModal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	width: 150px;
+	height: 40px;
+}
+
+.deleteModal-confirm-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.deleteModal-confirm-btn:hover {
+    background: #e60000;
+}
+
+.deleteModal-cancel-btn {
+    background: #ddd;
+    color: #333;
+}
+
+.deleteModal-cancel-btn:ㄴhover {
+    background: #bbb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

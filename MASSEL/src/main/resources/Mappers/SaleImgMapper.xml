@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.SaleImgDAO">
+	<insert id="registerSaleImg">
+		insert into sale_img (sno, uuid, save_dir, file_name, file_type, file_size) values
+		(#{sno},#{uuid},#{saveDir},#{fileName},#{fileType},#{fileSize})
+	</insert>
+	<select id="getImgList" resultType="sivo">
+		select * from sale_img where sno = #{sno} and file_type= 1 
+	</select>
+	<update id="updateSaleImg">
+		update sale_img set uuid = #{file.uuid}, save_dir = #{file.saveDir}, file_name = #{file.fileName},
+		file_type = #{file.fileType}, file_size = #{file.fileSize} where sno = #{sno}
+	</update>
+</mapper>

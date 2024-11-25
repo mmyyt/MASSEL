@@ -1,0 +1,798 @@
+@charset "UTF-8";
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	color: black;
+	text-decoration: none;
+	
+}
+
+a:visited{
+	color: black;
+	text-decoration: none;
+}
+a:link{
+	color: black;
+	text-decoration: none;
+}
+
+
+input:focus {
+	outline: none;
+}
+
+.wrap {
+	width: 100%;
+
+	/* background-color: #EFEEEE;  */
+	position : relative;
+	display: flex;
+
+
+    min-height: 100vh;
+}
+
+
+.sideBar {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    padding-top: 80px;
+    font-family: Arial, sans-serif;
+}
+
+
+.sideBarContent {
+    padding: 10px;
+}
+
+
+.sideBarContent > div {
+    margin-bottom: 30px;
+}
+
+
+.myInfoTop, .sellerTop, .buyerTop {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+
+.sideBarContent ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sideBarContent ul li {
+    margin: 10px 0;
+}
+
+
+.sideBarContent ul li a {
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sideBarContent ul li a:hover {
+    background-color: #beaae9;
+
+    color: white;
+    font-weight: bold;
+}
+
+
+.sideBarContent ul li a.active {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+}
+
+/* 유저정보 */
+
+
+.profileInfo {
+	width: 600px;
+	height: 400px;
+	background-color: white;
+	border-radius: 4px;
+	position: relative;
+	float: left;
+	top: 120px;
+	left: 500px;
+}
+
+.profileInfoTitle {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
+
+.profileInfoText {
+	font-size: 28px;
+	color: black;
+	margin-left : 200px;
+	cursor: default;
+}
+
+.line{
+	width: 550px;
+	color: black;
+	position: absolute;
+	top: 55px;
+	/* left: 30px; */
+	margin-top: 40px;
+}
+
+.profileInfoArea {
+	width: 100%;
+	height: 300px;
+	border-bottom-color: purple;
+}
+
+
+/*이미지*/
+
+
+.userImgArea {
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; 
+    overflow: hidden;
+    margin-left: 70px;
+}
+
+.profileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer; 
+}
+
+.overlayText {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.id {
+/* 	border-bottom: 1px solid black; */
+	height: 50px;
+}
+
+.idTextArea {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+}
+
+.idText {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.idValueArea {
+	width: 400px;
+	height: 50px;
+	background-color: white;
+	float: left;
+/* 	text-align: center; */
+	font-size: 15px;
+}
+
+.idValue {
+	margin-top: 20px;
+	font-size: 15px;
+	color: #6C757D;
+}
+
+.idLine{
+	width: 450px;
+	color: #D9D7D7;
+	position: relative;
+	bottom: 10px;
+/* 	left: 60px; */
+}
+
+/*pw*/
+
+.pw {
+/* 	border-bottom: 1px solid black; */
+	height: 50px;
+}
+
+.pwTextArea {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+}
+
+.pwText {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.pwEditBtnWrap{
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.pwEditBtn{
+	border: none;
+	border-radius: 8px;
+	height: 40px;
+	cursor: pointer;
+	width: 120px;
+	
+}
+
+.pwLine{
+	width: 450px;
+	color: #D9D7D7;
+	position: relative;
+	bottom: 10px;
+
+}
+
+/*nickname*/
+
+.nicknameArea {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+}
+
+.nickname {
+/* 	border-bottom: 1px solid black; */
+	height: 50px;
+	display: flex;
+}
+
+.nicknameText {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.nicknameValueArea {
+	width: 220px;
+	height: 50px;
+	background-color: white;
+	float: left;
+/* 	text-align: center; */
+}
+
+.nicknameValue {
+	margin-top: 20px;
+	font-size: 13px;
+	color: #6C757D;
+}
+
+.nicknameLine{
+
+	width: 450px;
+	color: #D9D7D7;
+	position: relative;
+	bottom: 10px;
+	/* left: 60px; */
+}
+
+.nicknameBtnWrap{
+/* 	margin-left: 10px; */
+
+}
+
+.nicknameEditBtn{
+	border: none;
+	border-radius: 8px;
+	height: 40px;
+	cursor: pointer;
+	width: 110px;
+}
+
+
+.email {
+/* 	border-bottom: 1px solid black; */
+	height: 50px;
+	display: flex;
+}
+
+.emailTextArea {
+	width: 200px;
+	height: 50px;
+	background-color: white;
+	float: left;
+	text-align: center;
+	font-size: 15px;
+}
+
+.emailText {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.emailValueArea {
+	width: 220px;
+	height: 50px;
+	background-color: white;
+	float: left;
+	/* text-align: center; */
+}
+
+.emailValue {
+	margin-top: 20px;
+	font-size: 13px;
+	color: #6C757D;
+}
+
+.emailLine{
+
+	width: 450px;
+	color: #D9D7D7;
+	position: relative;
+	bottom: 10px;
+	/* left: 60px; */
+}
+
+
+.emailBtnWrap{
+/* 	margin-left: 10px; */
+
+}
+
+.emailEditBtn{
+	border: none;
+	border-radius: 8px;
+	height: 40px;
+	cursor: pointer;
+	width: 110px;
+}
+
+
+
+/*모달창*/
+
+#pwModal {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+	animation: fadeIn 0.3s ease-in-out;
+	
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.pwModal_content {
+	width: 400px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;
+
+	
+}
+
+.pwModalTitle{
+	display: flex;
+	/* background-color: #212529; */
+	/* color: white; */
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+.pwT{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.pwCloseBtn{
+	margin-left: 240px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.pwModalArea{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.pwModalContent {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.pwChangeBtn {
+	border-top : 1px solid #212529;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: #ccc;
+	color: white;
+	height : 50px;
+	margin-top: 40px;
+	/* border-radius : 5px; */
+	border-radius: 0px 0px 5px 5px;
+}
+
+.pwChangeSubmit{
+	width: 100%;
+	height : 100%;
+	color: white;
+	background: none;
+	border:  none;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 0px 0px 5px 5px;	
+}
+
+.closeText{
+	margin-top: 7px;
+}
+
+.pwChangeArea, .pwcChangeArea{
+	display:flex;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.pwModal input {
+
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	border-color: #7e7e7e;
+	font-size: 15px;
+	
+	padding : 10px;
+	
+	width : 200px;
+	
+	margin-left: 10px;
+}
+
+.pwcChangeArea input{
+	margin-left: 30px;
+}
+
+.pwVisibility, .pwVisibility_off{
+	cursor: pointer;
+}
+
+
+.pwMsg, .pwcMsg{
+	font-size: 13px;
+	
+}
+
+
+/*닉네임모달*/
+#nicknameModal {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+	animation: fadeIn 0.3s ease-in-out;
+	
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.nicknameModal_content {
+	width: 400px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;
+
+	
+}
+
+.nicknameModalTitle{
+	display: flex;
+	/* background-color: #212529; */
+	/* color: white; */
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+.nicknameT{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.nicknameCloseBtn{
+	margin-left: 240px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.nicknameModalArea{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.nicknameModalContent {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.nicknameChangeBtn {
+	border-top : 1px solid #212529;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: #ccc;
+	color: white;
+	height : 50px;
+	margin-top: 40px;
+	/* border-radius : 5px; */
+	border-radius: 0px 0px 5px 5px;
+}
+
+.nicknameChangeSubmit{
+	width: 100%;
+	height : 100%;
+	color: white;
+	background: none;
+	border:  none;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 0px 0px 5px 5px;	
+}
+
+.closeText{
+	margin-top: 7px;
+}
+
+.nicknameChangeArea{
+	display:flex;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.nicknameModal input {
+
+	border-left-width: 0;
+	border-right-width: 0;
+	border-top-width: 0;
+	border-bottom-width: thin;
+	border-color: #7e7e7e;
+	font-size: 15px;
+	
+	padding : 10px;
+	
+	width : 200px;
+	
+	margin-left: 10px;
+}
+
+
+.nicknameMsg{
+	font-size: 13px;
+	
+}
+
+
+
+/*이미지변경모달*/
+
+#imgModal {
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	
+	animation: fadeIn 0.3s ease-in-out;
+	
+}
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+    
+.imgModal_content {
+	width: 400px;
+	padding: 30px 30px;
+	margin: 0 auto;
+	border: 1px solid #777;
+	background-color: #fff;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-top: 250px;
+
+	
+}
+
+.imgModalTitle{
+	display: flex;
+	/* background-color: #212529; */
+	/* color: white; */
+	border-bottom: 1px solid #ccc;
+	padding: 5px;
+}
+
+.imgT{
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.imgCloseBtn{
+	margin-left: 240px;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.imgModalArea{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+}
+
+.imgModalContent {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 16px;
+	left: 10px;
+	margin-top: 40px;
+		
+}
+
+.imgChangeArea{
+	display:flex;
+	margin-left: 20px;
+	margin-top: 20px;
+	
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.thumbnailImg{
+	width: 200px;
+	height: 200px;
+	background-color: #f1f1f1;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.imgChangeSubmit{
+	width: 100%;
+	height : 100%;
+	color: white;
+	background: none;
+	border:  none;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.imgChangeBtn {
+	border-top : 1px solid #212529;
+	/* cursor: pointer; */
+	font-size: 20px;
+	/* background-color: #212529; */
+	background-color : #ccc;
+	color: white;
+	height : 50px;
+	margin-top: 40px;
+	/* border-radius : 5px; */
+	border-radius: 0px 0px 5px 5px;
+}

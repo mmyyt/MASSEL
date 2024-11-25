@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybist.org//DTD Mapper 3.0//EN"
+	"https://mybatis.org/dtd/mybatis-3-mapper.dtd/">
+<mapper namespace="com.massel.www.repository.DemandSurveyParticipationDAO">
+	<insert id="insertDemandParticipation">
+		insert into demand_survey_participation (dno, dpno, id, dpname, dpprice, count, email, nickname) values
+		(#{dno},#{dpno},#{id},#{dpname},#{dpprice},#{count}, #{email}, #{nickname})
+	</insert>
+	<select id="getParticipantCount" resultType="int">
+		select count(distinct id) from demand_survey_participation where dno = #{dno}
+	</select>
+	<select id="getParticipation" resultType="dsppvo">
+		select * from demand_survey_participation where dno = #{dno}
+	</select>
+	<select id="getMyParticipation" resultType="dsppvo">
+		SELECT DISTINCT dno, id, participationDate FROM demand_survey_participation WHERE id = #{id};
+	</select>
+	<select id="getUserDemandFormDeatil" resultType="dsppvo">
+		select * from demand_survey_participation where id = #{userId} and dno = #{dno}
+	</select>
+	<select id="getParticipationInfo" resultType="dsppvo">
+		select distinct id, nickname, email, participationDate from demand_survey_participation where id = #{userId} and dno = #{dno} 
+	</select>
+	<select id="isParticipated" resultType="int">
+		select count(*) from demand_survey_participation where id = #{userID} and dno = #{dno}
+	</select>
+</mapper>
