@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-    <typeInfo handle="=MASSEL/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.massel.www.service{DemandSurveyService.java[DemandSurveyService" modifiers="513" timestamp="1732360359209"/>
-    <typeInfo handle="=MASSEL/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.massel.www.service{ChatService.java[ChatService" modifiers="513" timestamp="1730446558870"/>
-    <typeInfo handle="=MASSEL/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.massel.www.service{SaleService.java[SaleService" modifiers="513" timestamp="1732349952517"/>
-    <typeInfo handle="=MASSEL/C:\/Users\/dbsal\/.m2\/repository\/org\/springframework\/spring-web\/5.3.10\/spring-web-5.3.10.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/spring-web-5.3.10.jar=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-web=/=/maven.version=/5.3.10=/=/maven.scope=/compile=/&lt;org.springframework.http.codec(CodecConfigurer$DefaultCodecConfig.class[DefaultCodecConfig" modifiers="1545" timestamp="1687163182478"/>
-</typeInfoHistroy>

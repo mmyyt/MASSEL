@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+Z:\_spring\MASSEL\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1109973650.index
-220602512.index
-550093008.index
-822972274.index
-2508032936.index
-3932861096.index
