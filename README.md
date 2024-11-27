@@ -69,3 +69,36 @@ MASSEL은 새로운 아이디어와 상품을 손쉽게 공유하고, 이를 통
 ## 데이터베이스 구조
 
 ![massel-erd](https://github.com/user-attachments/assets/516a7531-b19b-42b7-8c1d-d8624113902d)
+
+
+
+
+
+## 프로젝트 설치 및 실행
+
+$ git clone https://github.com/mmyyt/MASSEL.git
+$ cd MASSEL
+
+### database 설정 
+
+
+### 1. MySQL접속
+mysql -u root -p
+
+
+### 2. 데이터베이스 생성 및 선택
+
+CREATE DATABASE masseldb;
+USE masseldb;
+
+
+### 3. SQL파일 실행
+
+mysql -u -root -p masseldb < schema.sql
+
+
+### 4. RootConfig.java에 사용자 정보 입력
+경로 : src/main/java/com/massel/www/config/RootConfig.java
+hikariconfig.setUsername("username");
+hikariconfig.setPassword("password");
+
