@@ -31,8 +31,8 @@ public class RootConfig {
 		HikariConfig hikariconfig = new HikariConfig(); 
 		hikariconfig.setDriverClassName("net.sf.log4jdbc.sql.jdbcapi.DriverSpy");
 		hikariconfig.setJdbcUrl("jdbc:log4jdbc:mysql://localhost:3306/masseldb");
-		hikariconfig.setUsername("myyot");
-		hikariconfig.setPassword("0901");
+		hikariconfig.setUsername("");
+		hikariconfig.setPassword("");
 		hikariconfig.setMinimumIdle(5); // 최소 유효한 커넥션 수
 		hikariconfig.setConnectionTestQuery("SELECT now()"); // test 쿼리
 		hikariconfig.setPoolName("springHikariCP");
