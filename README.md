@@ -77,6 +77,7 @@ MASSEL은 새로운 아이디어와 상품을 손쉽게 공유하고, 이를 통
 ## 프로젝트 설치 및 실행
 
 $ git clone https://github.com/mmyyt/MASSEL.git
+
 $ cd MASSEL
 
 ### database 설정 
@@ -89,6 +90,7 @@ mysql -u root -p
 ### 2. 데이터베이스 생성 및 선택
 
 CREATE DATABASE masseldb;
+
 USE masseldb;
 
 
@@ -99,6 +101,8 @@ mysql -u -root -p masseldb < schema.sql
 
 ### 4. RootConfig.java에 사용자 정보 입력
 경로 : src/main/java/com/massel/www/config/RootConfig.java
+
 hikariconfig.setUsername("username");
+
 hikariconfig.setPassword("password");
 
